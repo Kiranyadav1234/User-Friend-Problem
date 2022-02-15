@@ -1,5 +1,13 @@
 const dataOfUser=require("./dataOfUser.json");
 const printFriendName=(userName)=>{
+    if(typeof(userName)==='number')
+    {
+        throw new Error('Invalid Input');
+    }
+    if(Array.isArray(userName))
+    {
+        throw new Error('Invalid Input');
+    }
     let friends=[];
     let flag=false;
     
@@ -25,4 +33,5 @@ const printFriendName=(userName)=>{
     }
     console.log(friends);
    }
-printFriendName('Kiran');
+printFriendName('Barton Mckee');
+module.exports=printFriendName;
