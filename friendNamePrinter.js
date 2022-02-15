@@ -1,7 +1,7 @@
 const dataOfUser=require("./dataOfUser.json");
 const printFriendName=(userName)=>{
-    let flag=false;
     let friends=[];
+    let flag=false;
     
     dataOfUser.forEach(data => {
         if(data.name===userName)
@@ -13,12 +13,16 @@ const printFriendName=(userName)=>{
 
             })
             flag=true;
+            
 
         }
     
     })
+    if(!flag)
+    {
+        console.log('user does not exist');
+        return;
+    }
     console.log(friends);
-   
-
-}
-printFriendName('Tisha Ryan');
+   }
+printFriendName('Kiran');
