@@ -1,5 +1,6 @@
 const dataOfUser=require("./dataOfUser.json");
 const printFriendName=(userName)=>{
+    let flag=false;
     if(typeof(userName)==='number')
     {
         throw new Error('Invalid Input');
@@ -12,10 +13,15 @@ const printFriendName=(userName)=>{
         if(data.name===userName)
         {
             console.log(data.friends);
+            flag=true;
 
         }
     
     })
+    if(!flag)
+    {
+        throw new Error('User does not exist');
+    }
 
 }
  //printFriendName('Barton Mckee');
